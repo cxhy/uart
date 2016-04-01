@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------
 //
-// *File Name      :       my_uart_top.v
+// *File Name      :       uart_top.v
 // *Version        :
 //                         1.0
 // *Module Description:
@@ -10,10 +10,10 @@
 //                        - Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:12:07
-// *LastChangeTime :      2016-03-29 14:27:08
+// *LastChangeTime :      2016-04-01 10:13:23
 //----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-module my_uart_top(
+module uart_top(
                 clk         ,
                 rst_n       ,
                 rs232_rx    ,
@@ -31,14 +31,14 @@ wire clk_bps1,clk_bps2;     // clk_bps_r高电平为接收数据位的中间采�
 wire[7:0] rx_data;  //接收数据寄存器，保存直至下一个数据来到
 wire rx_int;        //接收数据中断信号,接收到数据期间始终为高电平
 
-speed_select        speed_rx_u(
+uart_speed_select        uart_speed_rx_u(
                             .clk(clk),  //波特率选择模块
                             .rst_n(rst_n),
                             .bps_start(bps_start1),
                             .clk_bps(clk_bps1)
                         );
 
-my_uart_rx          my_uart_rx_u(
+uart_rx          uart_rx_u(
                             .clk(clk),  //接收数据模块
                             .rst_n(rst_n),
                             .rs232_rx(rs232_rx),
@@ -49,14 +49,14 @@ my_uart_rx          my_uart_rx_u(
                         );
 
 
-speed_select        speed_tx_u(
+uart_speed_select        uart_speed_tx_u(
                             .clk(clk),  //波特率选择模块
                             .rst_n(rst_n),
                             .bps_start(bps_start2),
                             .clk_bps(clk_bps2)
                         );
 
-my_uart_tx          my_uart_tx_u(
+uart_tx          uart_tx_u(
                             .clk(clk),  //发送数据模块
                             .rst_n(rst_n),
                             .rx_data(rx_data),

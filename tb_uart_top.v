@@ -9,13 +9,13 @@
 //                        -Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:12:07
-// *LastChangeTime :      2016-04-01 09:57:07
+// *LastChangeTime :      2016-04-01 10:24:25
 //----------------------------------------------------------------------------
 
 
 
 `timescale 1ns / 1ps
-module tb_my_uart_top;
+module tb_uart_top;
 
 
 wire clk;
@@ -31,7 +31,7 @@ sys_ctrl_task sys_ctrl(
 
     );
 
-my_uart_top my_uart_top_u(
+uart_top uart_top_u(
                 .clk       (clk)      ,
                 .rst_n     (rst_n)    ,
                 .rs232_rx  (rs232_rx) ,
@@ -54,7 +54,7 @@ reg [7:0] cnt;
 
 reg [7:0] data_temp;
 reg rx_flag;
-reg tx_data;
+reg [7:0] tx_data;
 
 
 initial begin
@@ -108,10 +108,10 @@ initial begin
         tx_task(tx_data);
         @(negedge rx_flag)begin
             if(data_temp == tx_data)begin
-                $write("random data transmit: %d,receive:%d;OK\n",cnt,data_temp);
+                $write("random data transmit: %d,receive:%d;OK\n",tx_data,data_temp);
             end
             else begin
-                $write("random data transmit: %d,receive:%d;error\n",cnt,data_temp);
+                $write("random data transmit: %d,receive:%d;error\n",tx_data,data_temp);
                 print.error("false");
             end
         end

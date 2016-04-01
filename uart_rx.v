@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------
 //
-// *File Name      :       my_uart_rx.v
+// *File Name      :       uart_rx.v
 // *Version        :
 //                         1.0
 // *Module Description:
@@ -10,10 +10,10 @@
 //                        - Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:10:15
-// *LastChangeTime :      2016-03-29 14:27:26
+// *LastChangeTime :      2016-04-01 10:11:31
 //----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-module my_uart_rx(
+module uart_rx(
                 clk          ,
                 rst_n        ,
                 rs232_rx     ,

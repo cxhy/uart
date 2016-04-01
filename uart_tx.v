@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------
 //
-// *File Name      :       my_uart_tx.v
+// *File Name      :       uart_tx.v
 // *Version        :
 //                         1.0
 // *Module Description:
@@ -10,10 +10,10 @@
 //                        - Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:13:00
-// *LastChangeTime :      2016-03-30 15:49:19
+// *LastChangeTime :      2016-04-01 10:13:33
 //----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-module my_uart_tx(
+module uart_tx(
                    clk         ,
                    rst_n       ,
                    rx_data     ,
