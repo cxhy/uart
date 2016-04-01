@@ -9,7 +9,7 @@
 //                         Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:12:07
-// *LastChangeTime :      2016-04-01 09:53:23
+// *LastChangeTime :      2016-04-01 10:34:07
 //----------------------------------------------------------------------------
 //
 module print_task();
@@ -40,7 +40,7 @@ endtask
 
 task terminate;
     begin
-        $write("simulation successful\n");
+        $write("Congratulations ! \nsimulation successful\n");
         $stop;
     end
 endtask
