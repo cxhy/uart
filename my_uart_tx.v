@@ -10,7 +10,7 @@
 //                        - Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:13:00
-// *LastChangeTime :      2016-03-29 13:37:49
+// *LastChangeTime :      2016-03-30 15:49:19
 //----------------------------------------------------------------------------
 `timescale 1ns / 1ps
 module my_uart_tx(
