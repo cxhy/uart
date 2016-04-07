@@ -9,7 +9,7 @@
 //                        -Guodezheng cxhy1981@gmail.com,
 // *LastChangeBy   :      guodezheng
 // *CreatTime      :      2016-03-22 10:12:07
-// *LastChangeTime :      2016-04-01 10:24:25
+// *LastChangeTime :      2016-04-06 10:03:14
 //----------------------------------------------------------------------------
 
 
@@ -42,7 +42,7 @@ uart_top uart_top_u(
 
 
 
-parameter BPS9600   = 32'd104_167;      //104167ns= 5207 * 20  在50M时钟下面就是5207个clk上升沿
+parameter BPS9600   = 32'd104_167;      //104167ns= 5207 * 20  在50M时钟下面就是5207个clk上升沿 cnt = mclk/bps(50 000 000 /9600 = 5207) (100 000 000 / 9600 = 104167)
 parameter BPS19200  = 32'd52_083;
 parameter BPS38400  = 32'd26_041;
 parameter BPS57600  = 32'd17_361;
@@ -148,6 +148,11 @@ always@(negedge rs232_tx)begin
         end
         rx_flag = 0;
     end
+end
+
+initial begin
+    $dumpfile("tb_uart_top.vcd");
+    $dumpvars(0, tb_uart_top);
 end
 
 
