@@ -13,6 +13,8 @@ vsim -novopt tb_uart_top
 #add wave -position insertpoint sim:/tb_my_uart_top/*
 #add wave -position insertpoint sim:/tb_my_uart_top/my_uart_top_u/*
 #add wave -position insertpoint sim:/tb_my_uart_top/my_uart_top_u/my_uart_rx_u/*
-#radix -hex
-#view wave
+add wave -position insertpoint sim:/tb_uart_top/uart_top_u/*
+add wave -position insertpoint sim:/tb_uart_top/uart_top_u/uart_tx_u/*
+radix -hex
+view wave
 run -all
